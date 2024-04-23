@@ -12,7 +12,7 @@ class AccessCodeConfig:
         self.domain = 'demo'
         self.example = 'na'
         self.prompt = 'na'
-        self.engine = 'text-davinci-003'
+        self.engine = 'gpt-3.5-turbo-instruct'
 
         self.session_length = 0
 

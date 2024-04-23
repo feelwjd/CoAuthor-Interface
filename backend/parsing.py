@@ -1,7 +1,10 @@
 """
 Parse user prompts and responses from the OpenAI API.
 """
-
+import nltk
+nltk.download('wordnet')
+nltk.download('omw-1.4')
+nltk.download('punkt')
 from nltk.tokenize import sent_tokenize, word_tokenize
 import numpy as np
 

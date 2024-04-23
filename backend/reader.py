@@ -14,7 +14,7 @@ def read_api_keys(config_dir):
     if not os.path.exists(path):
         raise RuntimeError(f'Cannot find API keys in the file: {path}')
     
-    with open(path) as f:
+    with open(path, 'rt', encoding='UTF-8') as f:
         rows = csv.DictReader(f)
         for row in rows:
             host = row['host']  # 'openai', 'ai21labs', 'anthropic', 'eleutherai', etc.
@@ -67,7 +67,7 @@ def read_prompts(config_dir):
     path = os.path.join(config_dir, 'prompts.tsv')
 
     prompts = {'na': ''}
-    with open(path) as f:
+    with open(path, 'rt', encoding='UTF-8') as f:
         rows = csv.reader(f, delimiter="\t", quotechar='"')
         for row in rows:
             if len(row) != 3:
